@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function filtra_lista(){
+            const filtro = document.getElementById("filtro").value.toLowerCase();
+            const lis = document.getElementsByTagName("li");
+
+            for (const li of lis) {
+                if(li.innerText.toLowerCase().startsWith(filtro)){
+                    li.style.fontWeight = 'bold';
+                }
+                if(filtro == ""){
+                    li.style.fontWeight = 'Normal'
+                }
+                
+            }
+        }
+</script>
+<body>
+    <form>
+        <label for="">Filtro: </label>
+        <input type="text" id="filtro" oninput="filtra_lista()">
+    </form>
+    
+    <ul>
+        <li>Davi</li>
+        <li>Gabriel</li>
+        <li>Henrique</li>
+        <li>Murilo</li>
+        <li>Larissa</li>
+    </ul>
+    
+</body>
+</html>

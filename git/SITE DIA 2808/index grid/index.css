@@ -1,0 +1,22 @@
+.header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+.container {
+    display: grid ;
+    grid-template-columns: repeat(auto-fit, min-max(300px,1fr));
+    gap: 20px;
+    padding: 20px;
+}
+.item{
+    border: 1px solid red;
+    padding: 1rem;
+}
+.final {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}

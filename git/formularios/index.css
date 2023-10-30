@@ -1,0 +1,39 @@
+body{
+    color: white;
+    display: block;
+    background-color: rgb(65, 65, 167);
+}
+form > *{
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    display: block;
+    font-size: 20px;
+}
+label, input{
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+fieldset
+{
+    
+    padding-block-start: 0.35em;
+    padding-block-end: 0.35em;
+    padding-inline-start: 0.75em;
+    padding-inline-end: 0.75em;
+    margin-inline-start: 2px;
+    margin-inline-end: 2px;
+    min-inline-size: min-content;
+    border-width: 2px;
+}
+legend{
+    font-size: 50px;
+}
+div{
+    width: 460px;
+    height: 100%;
+    margin: auto;
+    background-color: rgb(42, 42, 126);
+    border: 3px solid black;
+    border-radius: 7px;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function click_calcular() {
+            let valorA = document.getElementById("txtValorA").value;
+            let valorB = document.getElementById("txtValorB").value;
+            let valorC = document.getElementById("txtValorC").value;
+            let delta = (Number(valorB) * Number(valorB))-4 * (Number(valorA) * Number(valorC));
+            let menosB = Number(valorB*(-1));
+            if (valorA == "") {
+                alert(`Informe o valor A`);
+            }
+            else if (valorB == "") {
+                alert(`Informe o valor B`);
+            }
+            else if (valorC == "") {
+                alert(`Informe o valor C`);
+            }
+            else {
+                if (delta > 0) {
+                    let xLinhaUm = (Number(menosB) +(Math.sqrt(delta))) / (2*Number(valorA));
+                    let xLinhaDois = (Number(menosB) -(Math.sqrt(delta))) / (2* Number(valorA));
+                    document.getElementById("txtDivi").innerHTML = `<h1>resultado x': ${xLinhaUm} </h1> `
+                    document.getElementById("txtDivid").innerHTML = ` <h1> resultado x": ${xLinhaDois} </h1>' `
+                }
+                else if(delta == 0){
+                    let xLinhaUm = (Number(menosB) +((delta))) / (2*Number(valorA));
+                    document.getElementById("txtDivi").innerHTML = `<h1>resultado x: ${xLinhaUm} </h1> `
+
+                }
+                else {
+                    alert(`não tem como calcular.... REFAÇA!!!`)
+                }
+            }
+        }
+        function click_limpar() {
+            document.getElementById("txtValorA").value = "";
+            document.getElementById("txtValorB").value = "";
+            document.getElementById("txtValorC").value = "";
+            document.getElementById("txtDivi").innerHTML= "";
+            document.getElementById("txtDivid").innerHTML = "";
+        }
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+    <h1 id="tit"> Calculadora de Bháskara</h1>
+    <div>
+        <label for="txtValorA">Valor A: </label>
+        <input type="number" value="" id="txtValorA">
+    </div>
+    <div>
+        <label for="txtValorB">Valor B: </label>
+        <input type="number" value="" id="txtValorB">
+    </div>
+    <div>
+        <label for="txtValorC">Valor C: </label>
+        <input type="number" value="" id="txtValorC">
+    </div>
+    <div id="txtDivi"> </div>
+    <div id="txtDivid"> </div>
+    <div>
+        <input type="button" value="Calcular" onclick="click_calcular()">
+        <input type="button" value="Limpar" onclick="click_limpar()">
+    </div>
+    </main>
+</body>
+
+</html>

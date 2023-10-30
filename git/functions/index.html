@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+    <script>
+
+
+        function click_calcular() {
+            let valorA = document.getElementById("txtValorA").value;
+            let valorB = document.getElementById("txtValorB").value;
+            let classificacao = "";
+            if (valorA == "") {
+                alert(`Informe o valor A`);
+            }
+            else if (valorB == "") {
+                alert(`Informe o valor B`);
+            }
+            else {
+                let soma = Number(valorA) / (Number(valorB * valorB));
+                document.getElementById("txtDivi").value = soma;
+
+
+                if (soma < 17) {
+                    classificacao = `Você está muito abaixo do peso`
+                    document.getElementById("txtClass").style.backgroundColor = "green"
+                    document.getElementById("txtClass").style.color = "white"
+                }
+                else if (soma >= 17 && soma <= 18.49) {
+                    classificacao = `Você está abaixo do peso`
+                    document.getElementById("txtClass").style.backgroundColor = "green"
+                    document.getElementById("txtClass").style.color = "white"
+                }
+                else if (soma >= 18.5 && soma <= 24.99) {
+                    classificacao = `Você está no peso normal`
+                    document.getElementById("txtClass").style.backgroundColor = "green"
+                    document.getElementById("txtClass").style.color = "white"
+                }
+                else if (soma >= 25 && soma <= 29.99) {
+                    classificacao = `Você está acima do peso`
+                    document.getElementById("txtClass").style.backgroundColor = "orange"
+                    document.getElementById("txtClass").style.color = "white"
+                }
+                else if (soma >= 30 && soma <= 34.99) {
+                    classificacao = `Você está com Obesidade I`
+                    document.getElementById("txtClass").style.backgroundColor = "orange"
+                    document.getElementById("txtClass").style.color = "white"
+                }
+                else if (soma >= 35 && soma <= 39.99) {
+                    classificacao = `Você está com Obesidade II (severa)`
+                    document.getElementById("txtClass").style.backgroundColor = "red"
+                    document.getElementById("txtClass").style.color = "white"
+                }
+                else if (soma >= 40) {
+                    classificacao = `Você está com Obesidade III (mórbida)`
+                    document.getElementById("txtClass").style.backgroundColor = "red"
+                    document.getElementById("txtClass").style.color = "white"
+                }
+                document.getElementById("txtClass").value = classificacao;
+            }
+
+        }
+        function click_limpar() {
+            document.getElementById("txtValorA").value = "";
+            document.getElementById("txtValorB").value = "";
+            document.getElementById("txtDivi").value = "";
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <h1 id="tit"> Calculadora de IMC</h1>
+    <div>
+        <label for="txtValorA">Peso (KG): </label>
+        <input type="number" value="" id="txtValorA">
+    </div>
+    <div>
+        <label for="txtValorB">Altura (Metros): </label>
+        <input type="number" value="" id="txtValorB">
+    </div>
+    <div>
+        <label for="txtDivi">IMC: </label>
+        <input type="number" id="txtDivi" disabled>
+    </div>
+    <div>
+        <input type="button" value="Calcular" onclick="click_calcular()">
+        <input type="button" value="Limpar" onclick="click_limpar()">
+    </div>
+    <div>
+        <label for="txtClass">Classificação: </label>
+        <input type="text" id="txtClass" disabled>
+    </div>
+
+
+</body>
+
+</html>

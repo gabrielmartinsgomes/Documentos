@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #quadrado {
+            height: 100px;
+            width: 100px;
+            background-color: black;
+            animation-name: cor_diferente;
+            animation-duration: 5s;
+        }
+        @keyframes cor_diferente {
+            0%{
+                background-color: black;
+                height: 100px;
+            }
+            30%{
+                background-color:rgb(94, 36, 36);
+                height: 200px;
+                
+            }
+            60% {
+                background-color: rgb(134, 20, 20);
+                height: 300px;
+            }
+            80%{
+                background-color: rgb(179, 12, 12);
+                height: 400px;
+            }
+            100%{
+                background-color: rgb(248, 0, 0) ;
+                height: 500px;
+            }
+        }
+        #banner{
+            background-image: url(chris.jpeg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 500px;
+            min-height: 700px;
+            animation-duration: 10s;
+            animation-name: troca_imagens;
+            animation-iteration-count: infinite;
+        }
+        @keyframes troca_imagens {
+            0%{
+                background-image: url(chris.jpeg);
+            }
+            25%{
+                background-image: url(hollow-knight.webp);
+            }
+            50%{
+                background-image: url(minecraft-HERO.webp);
+            }
+            100%{
+                background-image: url(cuphead-banner.jpeg);
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="banner">
+
+    </div>
+    <div id="quadrado">
+
+    </div>
+    
+</body>
+</html>

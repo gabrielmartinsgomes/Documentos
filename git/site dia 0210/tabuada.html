@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <script>
+        function teste() {
+            let resultado = ""
+            let tabuada = document.getElementById('campo-numero').value;
+            if (!isNaN(tabuada)) {
+                for (let i = 1; i <= 10; i++) {
+                resultado = resultado + `<li>${tabuada*i}</li>`;
+                }
+                document.getElementById("resultado").innerHTML = resultado;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="number" id="campo-numero" oninput="teste()">
+        <ul id="resultado"></ul>
+    </form>
+</body>
+</html>
